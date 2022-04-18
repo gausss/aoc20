@@ -6,7 +6,6 @@ import readInputNumbers
 import kotlin.test.assertEquals
 
 internal class Ex1Test {
-
     var input: List<Int> = listOf();
 
     @BeforeEach
