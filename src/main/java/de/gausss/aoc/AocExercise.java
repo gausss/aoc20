@@ -16,7 +16,7 @@ public abstract class AocExercise<T> {
 
     public void solve() {
         System.out.printf("Part A -> %s \n", solveA());
-        System.out.printf("Part B -> %s", solveB());
+        System.out.printf("Part B -> %s \n", solveB());
     }
 
     protected abstract T readData(String dataFile) throws URISyntaxException, IOException;

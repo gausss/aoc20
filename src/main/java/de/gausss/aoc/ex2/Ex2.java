@@ -8,7 +8,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class Ex2 extends AocExercise<List<String>> {
+class Ex2 extends AocExercise<List<String>> {
     public static void main(String[] args) {
         new Ex2("ex2.txt").solve();
     }

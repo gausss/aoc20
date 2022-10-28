@@ -1,9 +1,8 @@
-package de.gauss.aoc.ex2;
-
-import de.gausss.aoc.ex2.Ex2;
-import org.junit.jupiter.api.Test;
+package de.gausss.aoc.ex2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class Ex2Test {
     private Ex2 exercise = new Ex2("ex2-test.txt");

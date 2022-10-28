@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class Ex1 extends AocExercise<List<Integer>> {
+class Ex1 extends AocExercise<List<Integer>> {
     public static void main(String[] args) {
         new Ex1("ex1.txt").solve();
     }
