@@ -3,10 +3,10 @@ package de.gausss.aoc;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-public abstract class AocExercise<T> {
+public abstract class Exercise<T> {
     protected T data;
 
-    public AocExercise(String dataFile) {
+    public Exercise(String dataFile) {
         try {
             data = readData(dataFile);
         } catch (IOException | URISyntaxException e) {

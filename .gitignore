@@ -1,4 +1,4 @@
 /.idea/
 /target/
-/consoleApp.iml
+*.iml
 .DS_Store

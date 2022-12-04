@@ -1,13 +1,13 @@
 package de.gausss.aoc.ex1;
 
-import de.gausss.aoc.AocExercise;
-import de.gausss.aoc.AocUtils;
+import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Utils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-class Ex1 extends AocExercise<List<Integer>> {
+class Ex1 extends Exercise<List<Integer>> {
     public static void main(String[] args) {
         new Ex1("ex1.txt").solve();
     }
@@ -18,7 +18,7 @@ class Ex1 extends AocExercise<List<Integer>> {
 
     @Override
     protected List<Integer> readData(String dataFile) throws URISyntaxException, IOException {
-        return AocUtils.readInputNumbers(dataFile);
+        return Utils.readInputNumbers(dataFile);
     }
 
     @Override

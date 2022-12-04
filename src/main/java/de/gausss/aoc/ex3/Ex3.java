@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import de.gausss.aoc.AocExercise;
-import de.gausss.aoc.AocUtils;
+import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Utils;
 
-class Ex3 extends AocExercise<List<String>> {
+class Ex3 extends Exercise<List<String>> {
     public static void main(String[] args) {
         new Ex3("ex3.txt").solve();
     }
@@ -18,7 +18,7 @@ class Ex3 extends AocExercise<List<String>> {
 
     @Override
     protected List<String> readData(String dataFile) throws URISyntaxException, IOException {
-        return AocUtils.readInputLines(dataFile);
+        return Utils.readInputLines(dataFile);
     }
 
     @Override

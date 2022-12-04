@@ -1,14 +1,14 @@
 package de.gausss.aoc.ex2;
 
-import de.gausss.aoc.AocExercise;
-import de.gausss.aoc.AocUtils;
+import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Utils;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.function.Predicate;
 
-class Ex2 extends AocExercise<List<String>> {
+class Ex2 extends Exercise<List<String>> {
     public static void main(String[] args) {
         new Ex2("ex2.txt").solve();
     }
@@ -19,7 +19,7 @@ class Ex2 extends AocExercise<List<String>> {
 
     @Override
     protected List<String> readData(String dataFile) throws URISyntaxException, IOException {
-        return AocUtils.readInputLines(dataFile);
+        return Utils.readInputLines(dataFile);
     }
 
     @Override
@@ -32,11 +32,7 @@ class Ex2 extends AocExercise<List<String>> {
             return constraint.lower() >= occurrences && occurrences <= constraint.upper();
         };
 
-        var count = data.stream()
-                .map(Constraint::from)
-                .filter(constraint -> constraint.isValid(policyA))
-                .count();
-        return (int) count;
+        return countMatching(policyA);
     }
 
     @Override
@@ -44,12 +40,17 @@ class Ex2 extends AocExercise<List<String>> {
         Predicate<Constraint> policyB = constraint -> {
             var lowerMatch = constraint.content().charAt(constraint.lower() - 1) == constraint.match();
             var upperMatch = constraint.content().charAt(constraint.upper() - 1) == constraint.match();
-            return AocUtils.xor(lowerMatch, upperMatch);
+            return Utils.xor(lowerMatch, upperMatch);
         };
 
+        return countMatching(policyB);
+    }
+
+
+    private int countMatching(Predicate<Constraint> policy) {
         var count = data.stream()
                 .map(Constraint::from)
-                .filter(constraint -> constraint.isValid(policyB))
+                .filter(constraint -> constraint.isValid(policy))
                 .count();
         return (int) count;
     }
