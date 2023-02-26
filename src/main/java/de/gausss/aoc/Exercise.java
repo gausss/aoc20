@@ -21,7 +21,7 @@ public abstract class Exercise<T> {
 
     protected abstract T readData(String dataFile) throws URISyntaxException, IOException;
 
-    public abstract int solveA();
+    public abstract Number solveA();
 
-    public abstract int solveB();
+    public abstract Number solveB();
 }

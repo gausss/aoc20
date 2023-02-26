@@ -22,7 +22,7 @@ class Ex1 extends Exercise<List<Integer>> {
     }
 
     @Override
-    public int solveA() {
+    public Number solveA() {
         for (Integer numA : data) {
             for (Integer numB : data) {
                 if (numA + numB == 2020) {
@@ -35,7 +35,7 @@ class Ex1 extends Exercise<List<Integer>> {
     }
 
     @Override
-    public int solveB() {
+    public Number solveB() {
         for (Integer numA : data) {
             for (Integer numB : data) {
                 for (Integer numC : data) {

@@ -23,7 +23,7 @@ class Ex2 extends Exercise<List<String>> {
     }
 
     @Override
-    public int solveA() {
+    public Number solveA() {
         Predicate<Constraint> policyA = constraint -> {
             var occurrences = (int) constraint.content()
                     .chars()
@@ -36,7 +36,7 @@ class Ex2 extends Exercise<List<String>> {
     }
 
     @Override
-    public int solveB() {
+    public Number solveB() {
         Predicate<Constraint> policyB = constraint -> {
             var lowerMatch = constraint.content().charAt(constraint.lower() - 1) == constraint.match();
             var upperMatch = constraint.content().charAt(constraint.upper() - 1) == constraint.match();
