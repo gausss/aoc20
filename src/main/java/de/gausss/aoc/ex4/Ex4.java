@@ -25,8 +25,8 @@ class Ex4 extends Exercise<List<String>> {
     @Override
     public Number solveA() {
         return data.stream()
-                .map(dataString -> Passport.fromString(dataString))
-                .filter(passport -> passport.isValid())
+                .map(Passport::fromString)
+                .filter(Passport::isValid)
                 .count();
     }
 

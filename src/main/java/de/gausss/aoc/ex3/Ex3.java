@@ -23,13 +23,13 @@ class Ex3 extends Exercise<List<String>> {
 
     @Override
     public Number solveA() {
-        Grid grid = Grid.fromFile(data);
+        var grid = Grid.fromFile(data);
         return traverse(grid, 3, 1);
     }
 
     @Override
     public Number solveB() {
-        Grid grid = Grid.fromFile(data);
+        var grid = Grid.fromFile(data);
         return traverse(grid, 1, 1) * traverse(grid, 3, 1) * traverse(grid, 5, 1) * traverse(grid, 7, 1) * traverse(grid, 1, 2);
     }
 

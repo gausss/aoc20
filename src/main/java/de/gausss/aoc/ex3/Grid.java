@@ -5,13 +5,13 @@ import java.util.List;
 
 record Grid(List<Point> points, int xMax, int yMax) {
 
- static Grid fromFile(List<String> lines) {
+    static Grid fromFile(List<String> lines) {
         var xIndex = 0;
         var yIndex = 0;
         var trees = new ArrayList<Point>();
-        for(String line: lines) {
+        for (String line : lines) {
             List<Character> points = line.chars().mapToObj(point -> (char) point).toList();
-            for(char point: points) {
+            for (char point : points) {
                 trees.add(new Point(xIndex, yIndex, point == '#'));
                 xIndex++;
             }

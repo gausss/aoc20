@@ -25,7 +25,7 @@ class Ex2 extends Exercise<List<String>> {
     @Override
     public Number solveA() {
         Predicate<Constraint> policyA = constraint -> {
-            var occurrences = (int) constraint.content()
+            var occurrences = constraint.content()
                     .chars()
                     .filter(character -> ((char) character) == constraint.match())
                     .count();
@@ -47,11 +47,10 @@ class Ex2 extends Exercise<List<String>> {
     }
 
 
-    private int countMatching(Predicate<Constraint> policy) {
-        var count = data.stream()
+    private long countMatching(Predicate<Constraint> policy) {
+        return data.stream()
                 .map(Constraint::from)
                 .filter(constraint -> constraint.isValid(policy))
                 .count();
-        return (int) count;
     }
 }

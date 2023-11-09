@@ -30,14 +30,14 @@ class Ex5 extends Exercise<List<String>> {
     @Override
     public Number solveA() {
         return data.stream()
-                .map(passcode -> parseSeatId(passcode))
+                .map(this::parseSeatId)
                 .max(Comparator.naturalOrder())
                 .orElse(0);
     }
 
     private int parseSeatId(String boardingPasscode) {
-        final String rowCode = boardingPasscode.substring(0, 7);
-        final String columnCode = boardingPasscode.substring(7);
+        var rowCode = boardingPasscode.substring(0, 7);
+        var columnCode = boardingPasscode.substring(7);
 
         return parseCode(Ex5.ROWS, rowCode) * 8 + parseCode(Ex5.COLUMNS, columnCode);
     }
@@ -47,13 +47,13 @@ class Ex5 extends Exercise<List<String>> {
             return inputRange[0];
         }
 
-        final int[] remainingInput = binaryPartition(inputRange, code.charAt(0));
-        final String remainingCode = code.substring(1);
+        var remainingInput = binaryPartition(inputRange, code.charAt(0));
+        var remainingCode = code.substring(1);
         return parseCode(remainingInput, remainingCode);
     }
 
     private int[] binaryPartition(int[] input, char key) {
-        final int mid = input.length / 2;
+        var mid = input.length / 2;
         if ('F' == key || 'L' == key) {
             return Arrays.copyOfRange(input, 0, mid);
         } else if ('B' == key || 'R' == key) {

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class Ex3Test {
-    private Ex3 exercise = new Ex3("ex3-test.txt");
+    private final Ex3 exercise = new Ex3("ex3-test.txt");
 
     @Test
     void testA() {

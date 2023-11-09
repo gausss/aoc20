@@ -17,10 +17,12 @@ public record Passport(String id, String birth, String issued, String expiration
      * cid (Country
      */
     public static Passport fromString(String serializedData) {
-        var passport = Arrays.stream(serializedData.split("\\s")).map(infoString -> {
-            String[] infoSplit = infoString.split(":");
-            return new Tuple(infoSplit[0], infoSplit[1]);
-        }).collect(Collectors.toMap(tuple -> tuple.first(), tuple -> tuple.last()));
+        var passport = Arrays.stream(serializedData.split("\\s"))
+                .map(infoString -> {
+                    String[] infoSplit = infoString.split(":");
+                    return new Tuple(infoSplit[0], infoSplit[1]);
+                }).collect(Collectors.toMap(Tuple::first, Tuple::last));
+
         return new Passport(passport.get("pid"), passport.get("byr"),
                 passport.get("iyr"), passport.get("eyr"), passport.get("hgt"),
                 passport.get("hcl"), passport.get("ecl"), passport.get("cid"));
