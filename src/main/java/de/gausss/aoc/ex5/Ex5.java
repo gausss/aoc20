@@ -59,3 +59,4 @@ class Ex5 implements Solvable {
 
         return new int[]{};
     }
+}
