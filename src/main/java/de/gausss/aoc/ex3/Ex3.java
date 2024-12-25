@@ -4,21 +4,19 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Solvable;
 import de.gausss.aoc.Utils;
 
-class Ex3 extends Exercise<List<String>> {
-    public static void main(String[] args) {
+class Ex3 implements Solvable {
+
+    private final List<String> data;
+
+    public static void main(String[] args) throws Exception {
         new Ex3("ex3.txt").solve();
     }
 
-    public Ex3(String dataFile) {
-        super(dataFile);
-    }
-
-    @Override
-    protected List<String> readData(String dataFile) throws URISyntaxException, IOException {
-        return Utils.readInputLines(dataFile);
+    public Ex3(String dataFile) throws URISyntaxException, IOException {
+        data = Utils.readInputLines(dataFile);
     }
 
     @Override
@@ -37,10 +35,10 @@ class Ex3 extends Exercise<List<String>> {
         var xIndex = 0;
         var yIndex = 0;
         var numTrees = 0;
-        while(yIndex <= grid.yMax()) {
+        while (yIndex <= grid.yMax()) {
             xIndex += xWalk;
             yIndex += yWalk;
-            if(grid.hasTree(xIndex, yIndex)) {
+            if (grid.hasTree(xIndex, yIndex)) {
                 numTrees++;
             }
         }

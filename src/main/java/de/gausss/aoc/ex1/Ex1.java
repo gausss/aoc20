@@ -1,24 +1,22 @@
 package de.gausss.aoc.ex1;
 
-import de.gausss.aoc.Exercise;
-import de.gausss.aoc.Utils;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-class Ex1 extends Exercise<List<Integer>> {
-    public static void main(String[] args) {
+import de.gausss.aoc.Solvable;
+import de.gausss.aoc.Utils;
+
+class Ex1 implements Solvable {
+
+    private final List<Integer> data;
+
+    public static void main(String[] args) throws Exception {
         new Ex1("ex1.txt").solve();
     }
 
-    public Ex1(String dataFile) {
-        super(dataFile);
-    }
-
-    @Override
-    protected List<Integer> readData(String dataFile) throws URISyntaxException, IOException {
-        return Utils.readInputNumbers(dataFile);
+    public Ex1(String dataFile) throws IOException, URISyntaxException {
+        data = Utils.readInputNumbers(dataFile);
     }
 
     @Override

@@ -1,25 +1,23 @@
 package de.gausss.aoc.ex2;
 
-import de.gausss.aoc.Exercise;
-import de.gausss.aoc.Utils;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.function.Predicate;
 
-class Ex2 extends Exercise<List<String>> {
-    public static void main(String[] args) {
+import de.gausss.aoc.Solvable;
+import de.gausss.aoc.Utils;
+
+class Ex2 implements Solvable {
+
+    private final List<String> data;
+
+    public static void main(String[] args) throws Exception {
         new Ex2("ex2.txt").solve();
     }
 
-    public Ex2(String dataFile) {
-        super(dataFile);
-    }
-
-    @Override
-    protected List<String> readData(String dataFile) throws URISyntaxException, IOException {
-        return Utils.readInputLines(dataFile);
+    public Ex2(String dataFile) throws URISyntaxException, IOException {
+        data = Utils.readInputLines(dataFile);
     }
 
     @Override
@@ -45,7 +43,6 @@ class Ex2 extends Exercise<List<String>> {
 
         return countMatching(policyB);
     }
-
 
     private long countMatching(Predicate<Constraint> policy) {
         return data.stream()

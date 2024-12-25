@@ -7,24 +7,21 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Solvable;
 import de.gausss.aoc.Utils;
 
-class Ex5 extends Exercise<List<String>> {
+class Ex5 implements Solvable {
+
+    private final List<String> data;
     private final static int[] ROWS = IntStream.range(0, 128).toArray();
     private final static int[] COLUMNS = IntStream.range(0, 8).toArray();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new Ex5("ex5.txt").solve();
     }
 
-    public Ex5(String dataFile) {
-        super(dataFile);
-    }
-
-    @Override
-    protected List<String> readData(String dataFile) throws URISyntaxException, IOException {
-        return Utils.readInputLines(dataFile);
+    public Ex5(String dataFile) throws URISyntaxException, IOException {
+        data = Utils.readInputLines(dataFile);
     }
 
     @Override
@@ -62,4 +59,3 @@ class Ex5 extends Exercise<List<String>> {
 
         return new int[]{};
     }
-}
