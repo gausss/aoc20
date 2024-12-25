@@ -1,14 +1,14 @@
 package de.gausss.aoc.ex5;
 
-import de.gausss.aoc.Exercise;
-import de.gausss.aoc.Utils;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
+
+import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Utils;
 
 class Ex5 extends Exercise<List<String>> {
     private final static int[] ROWS = IntStream.range(0, 128).toArray();
@@ -61,10 +61,5 @@ class Ex5 extends Exercise<List<String>> {
         }
 
         return new int[]{};
-    }
-
-    @Override
-    public Number solveB() {
-        return 0;
     }
 }

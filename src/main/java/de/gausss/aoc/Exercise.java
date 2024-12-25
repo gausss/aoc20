@@ -23,5 +23,7 @@ public abstract class Exercise<T> {
 
     public abstract Number solveA();
 
-    public abstract Number solveB();
+    public Number solveB() {
+        return 0;
+    }
 }

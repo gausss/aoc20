@@ -29,9 +29,4 @@ class Ex4 extends Exercise<List<String>> {
                 .filter(Passport::isValid)
                 .count();
     }
-
-    @Override
-    public Number solveB() {
-        return 0;
-    }
 }

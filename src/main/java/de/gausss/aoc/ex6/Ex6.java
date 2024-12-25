@@ -1,12 +1,12 @@
 package de.gausss.aoc.ex6;
 
-import de.gausss.aoc.Exercise;
-import de.gausss.aoc.Utils;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
+
+import de.gausss.aoc.Exercise;
+import de.gausss.aoc.Utils;
 
 class Ex6 extends Exercise<String> {
     public static void main(String[] args) {
@@ -39,10 +39,5 @@ class Ex6 extends Exercise<String> {
 
             return acc;
         }, String::concat).length();
-    }
-
-    @Override
-    public Number solveB() {
-        return null;
     }
 }
